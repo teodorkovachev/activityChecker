@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+sourceSets{
+	main.java.srcDir "src"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework:spring-context:4.1.6.RELEASE")
+    compile "joda-time:joda-time:2.2"
+    testCompile("org.springframework:spring-test:4.1.6.RELEASE")
+}
+
+mainClassName = 'bg.kovachev.activityChecker.Application'
+
+task showMeCache << {
+  configurations.compile.each { println it }
+}
+
