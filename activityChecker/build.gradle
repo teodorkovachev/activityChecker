@@ -12,7 +12,9 @@ repositories {
 
 dependencies {
     compile("org.springframework:spring-context:4.1.6.RELEASE")
+	compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'
     compile "joda-time:joda-time:2.2"
+	compile 'javax.servlet:javax.servlet-api:3.0.1'
     testCompile("org.springframework:spring-test:4.1.6.RELEASE")
 }
 
