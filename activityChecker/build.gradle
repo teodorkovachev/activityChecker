@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'application'
 
 sourceSets{
 	main.java.srcDir "src"
@@ -11,14 +10,14 @@ repositories {
 }
 
 dependencies {
-    compile("org.springframework:spring-context:4.1.6.RELEASE")
+    compile 'org.springframework:spring-context:4.1.6.RELEASE'
 	compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'
-    compile "joda-time:joda-time:2.2"
 	compile 'javax.servlet:javax.servlet-api:3.0.1'
-    testCompile("org.springframework:spring-test:4.1.6.RELEASE")
+	compile 'org.hibernate:hibernate-core:4.3.10.Final'
+	compile 'mysql:mysql-connector-java:5.1.13'
+	compile 'org.apache.tomcat:tomcat-dbcp:7.0.55'
+    testCompile 'org.springframework:spring-test:4.1.6.RELEASE'
 }
-
-mainClassName = 'bg.kovachev.activityChecker.Application'
 
 task showMeCache << {
   configurations.compile.each { println it }
